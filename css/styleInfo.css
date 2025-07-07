@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ body {
+     margin: 0;
+     font-family: 'Segoe UI', sans-serif;
+     background: linear-gradient(to bottom right, #2e0080, #8000ff);
+     color: white;
+ }
+
+header {
+    background-color: #2e007a;
+    padding: 15px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+     display: flex;
+     align-items: center;
+     font-size: 1.2rem;
+ }
+
+.logo img {
+    width: 28px;
+    margin-right: 10px;
+}
+
+/* Estilo del navbar */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #5e00a1;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+nav a.active {
+    background: #8753f2;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.authors {
+    text-align: center;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+section.section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+}
+
+section.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #00c0ff;
+}
+
+section.section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+.highlight {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2e007a;
+    color: #ccc;
+    font-size: 0.9rem;
+}
