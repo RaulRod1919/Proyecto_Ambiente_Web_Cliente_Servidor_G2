@@ -14,6 +14,15 @@
      padding: 10px 30px;
  }
 
+ header {
+    background-color: #2e007a;
+    padding: 15px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
  .logo {
      display: flex;
      align-items: center;
@@ -42,6 +51,32 @@
  .nav-links a.active {
      background: #8753f2;
  }
+
+ nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #5e00a1;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+nav a.active {
+    background: #8753f2;
+}
+
+ul {
+    padding-left: 2%;
+}
+
+li {
+    margin-bottom: 2%;
+}
 
  /* Estilo del main */
  .main {
@@ -106,3 +141,222 @@
  .btn-politicas {
      background: linear-gradient(to right, #f500c0, #b000ff);
  }
+
+ /* Parte de Info */
+ .principal {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.authors {
+    text-align: center;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+section.section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+}
+
+section.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #00c0ff;
+}
+
+section.section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+.highlight {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/*Footer*/
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2e007a;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.contenedor-caja{
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 3%;
+    text-align: left;
+    max-width: 40%;
+}
+
+.txt-centro{
+    text-align: center !important;
+}
+
+.contenedor-caja p{
+    font-size: 90%  !important;
+}
+
+.bg-naranja{
+    background: linear-gradient(to bottom right, #f27036, #f9a33b);
+}
+
+.bg-celeste{
+    background: linear-gradient(to bottom right, #00b4db, #0083b0);
+}
+ 
+.contenedor-icon-danger{
+    border-radius: 10px;
+    width: 5%;
+    padding: 1% 1.5%;
+    margin-right: 3%;
+    aspect-ratio: 1 / 1 !important;
+    border: 1px solid white;
+}
+
+.contenedor-icon-danger img{
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+}
+
+.boton-participacion{
+    border: none;
+    font: inherit;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    padding: 2% 0;
+    margin-top: 2%;
+}
+
+.pasos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+}
+
+.pasos div{
+    grid-row: 1;
+    display: grid;
+    place-items: center;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.pasos p{
+    grid-row: 2;
+}
+
+/* PopUps de agregado */
+.overlay {
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-items: center;
+    justify-content: center;    
+    align-items: center;
+}
+
+.popup {
+    background: linear-gradient(to bottom right, #2e0080, #8000ff);
+    padding: 2%;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-btns{
+    margin-top: 2%;
+}
+
+.form{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup h2{
+    margin: 0;
+}
+
+.cerrar-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+}
+
+.btn-popup {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+label{
+    margin-bottom: 2%;
+}
+
+.entrada{
+    all: unset;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+option{
+    background-color: #2f3a67;
+    border: 2px solid white;
+}

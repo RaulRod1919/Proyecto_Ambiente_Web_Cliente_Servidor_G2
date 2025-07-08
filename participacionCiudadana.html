@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleAyuda.css">
+    <script src="js/popUp.js"></script>
+    <title>VeciReport</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" alt="Logo">
+            VeciReport
+        </div>
+        <nav>
+            <div class="nav-links">
+                <a href="#">INICIO</a>
+                <a href="paginaInfo.html">INFORMACIÓN</a>
+                <a href="paginaAyuda.html">AYUDA</a>
+                <a href="#" class="active">PARTICIPACIÓN CIUDADANA</a>
+                <a href="#">PERFIL</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main">
+            <h1>Participación <br><span>Ciudadana</span></h1>
+            <p>Tu participación es fundamental para construir una comunidad mejor</p>
+            <p>Reporta tus problemas y consulta el estado de otros reportes</p>
+            <section class="cards">
+                <article class="contenedor-caja">
+                    <div class="logo">
+                        <div class="contenedor-icon-danger bg-naranja">
+                            <img src="img/advertencia.png" alt="Advertencia">
+                        </div>
+                        Reportar un Problema
+                    </div>
+                    <p>¿Haz identificado algun problema en tu comunidad? Reportalo aquí y las autoridades
+                        correspondientes
+                        se harán cargo.</p>
+                    <ul>
+                        <li>Infraestructura</li>
+                        <li>Servicios públicos</li>
+                        <li>Seguridad</li>
+                    </ul>
+                    <button class="boton-participacion bg-naranja" type="button" id="crearReporte">Crear Reporte</button>
+                </article>
+                <article class="contenedor-caja">
+                    <div class="logo">
+                        <div class="contenedor-icon-danger bg-celeste">
+                            <img src="img/busqueda.png" alt="Busqueda">
+                        </div>
+                        Consultar Reportes
+                    </div>
+                    <p>Consulta el estado de tus reportes y revisa otros reportes realizados por la comunidad
+                        para estar al día.</p>
+                    <ul>
+                        <li>Infraestructura</li>
+                        <li>Servicios públicos</li>
+                        <li>Seguridad</li>
+                    </ul>
+                    <button class="boton-participacion bg-celeste" type="button">Ver Reportes</button>
+                </article>
+            </section>
+
+            <section class="cards">
+                <article class="txt-centro contenedor-caja ">
+                    <h2>¿Como funciona el proceso?</h2>
+                    <section class="pasos">
+                        <div class="bg-celeste">1</div>
+                        <p>Reporta el Problema</p>
+                        <div class="bg-celeste">2</div>
+                        <p>Revisión Inicial</p>
+                        <div class="bg-celeste">3</div>
+                        <p>Asignación</p>
+                        <div class="bg-celeste">4</div>
+                        <p>Resolución</p>
+                    </section>
+                </article>
+            </section>
+        </section>
+
+        <div class="overlay" id="popup">
+            <div class="popup">
+                <button class="cerrar-btn" id="cerrar">&times;</button>
+                <h2>Crear un Nuevo Reporte</h2>
+                <p>Describe el problema que haz logrado identrificar dentro de tu comunidad, recuerda que tus aportes
+                    ayudan al desarrollo de la comunidad.
+                </p>
+                <form class="form">
+                    <label>Titulo</label>
+                    <input type="text" class="entrada">
+                    <label>Categorías</label>
+                    <select type="text" class="entrada">
+                        <option>Opción 1</option>
+                        <option>Opción 2</option>
+                        <option>Opción 3</option>
+                    </select>
+                    <label>Ubicación</label>
+                    <input type="text" class="entrada">
+                    <label>Descripción</label>
+                    <textarea class="entrada" rows="3"></textarea>
+                    <label>Imagen del Problema</label>
+                    <input type="file">
+                    <div class="contenedor-btns">
+                        <button class="boton-participacion bg-naranja" type="submit">Enviar Reporte</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        Universidad Fidélitas - Sede Virtual, Costa Rica<br />
+        Proyecto desarrollado como parte del curso de Desarrollo Web<br />
+        &copy; 2025 VeciReport
+    </footer>
+</body>
+
+</html>
