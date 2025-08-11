@@ -1,0 +1,17 @@
+-- Llenar la tabla de categorias
+INSERT INTO `categorias` (`id_categoria`, `nombre`) VALUES ('1', 'Infraestructura');
+
+-- Llenar la tabla de provincias
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('1', 'San José');
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('2', 'Alajuela');
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('3', 'Cartago');
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('4', 'Heredia');
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('5', 'Guanacaste');
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('6', 'Puntarenas');
+INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('7', 'Limón');
+
+-- Llenar la tabla de usuarios
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido_1`, `apellido_2`, `correo`, `id_provincia`) VALUES ('1', 'Jefferson', 'Anchia', 'Garcia', 'jeffersanchia18@gmail.com', '6');
+
+-- Llenar la tabla de reportes
+INSERT INTO `reportes` (`id_reporte`, `titulo`, `descripcion`, `estado`, `prioridad`, `id_categoria`, `id_usuario`) VALUES ('1', 'Acera dañada', 'Acera dañada cerca del salón comunal', 'Pendiente', 'media', '1', '1');
