@@ -434,3 +434,25 @@
  .tablaReportes {
      margin: 0 auto;
  }
+
+
+
+ .main {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;     
+    gap: 20px;              
+}
+
+.card {
+    width: 300px;           
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1); 
+}
+
+.boton {
+    display: block;
+    margin: 20px auto 0 auto; 
+}
