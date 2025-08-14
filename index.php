@@ -33,7 +33,8 @@
         <h2>📢 ¿Necesitas reportar algo?</h2>
         <p>Reporta problemas en tu comunidad de manera rápida y sencilla. Tu reporte será atendido por las autoridades
           correspondientes.</p>
-        <a href="#" class="boton">Hacer un Reporte</a>
+       <a href="participacionCiudadana.php" class="boton">Hacer un Reporte</a>
+
       </div>
     </div>
     <footer class="footer">
