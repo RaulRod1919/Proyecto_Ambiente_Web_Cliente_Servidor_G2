@@ -29,15 +29,6 @@ CREATE TABLE Usuarios (
     FOREIGN KEY (id_provincia) REFERENCES Provincias(id_provincia)
 );
 
--- Tabla Administradores
-CREATE TABLE Administradores (
-    id_admin INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    apellido_1 VARCHAR(100) NOT NULL,
-    apellido_2 VARCHAR(100),
-    correo VARCHAR(150) NOT NULL UNIQUE
-);
-
 -- Tabla Telefonos
 CREATE TABLE Telefonos (
     id_telefono INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,15 +41,6 @@ CREATE TABLE Usuarios_Telefonos (
     id_usuario INT,
     id_telefono INT,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
-    FOREIGN KEY (id_telefono) REFERENCES Telefonos(id_telefono)
-);
-
--- Tabla Administradores_Telefonos
-CREATE TABLE Administradores_Telefonos (
-    id_admin_telefono INT AUTO_INCREMENT PRIMARY KEY,
-    id_admin INT,
-    id_telefono INT,
-    FOREIGN KEY (id_admin) REFERENCES Administradores(id_admin),
     FOREIGN KEY (id_telefono) REFERENCES Telefonos(id_telefono)
 );
 

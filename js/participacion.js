@@ -49,4 +49,19 @@ document.addEventListener("DOMContentLoaded", function(){
                 console.log(respuesta);
         });
     });
+
+    $("#user").on("submit", function(event){
+        event.preventDefault();
+        let nombre = $("#nombre").val();
+        let apellido1 = $("#appellido1").val();
+        let apellido2 = $("#apellido2").val();
+        let correo = $("#correo").val();
+        let password = $("#password").val();
+        let idCanton = $("#cantones").val();
+        console.log(idCanton);
+        $.post("router.php?action=saveUser", {nombre: nombre, apellido1: apellido1, apellido2: apellido2, correo: correo, password: password,
+            rol : "User",idCanton: idCanton}, function(respuesta){
+                console.log(respuesta);
+        });
+    });
 });
