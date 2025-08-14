@@ -2,28 +2,12 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Inicio - VeciReport</title>
-  <link rel="stylesheet" href="css/styleAyuda.css">
+    <?php include 'app/fragmentos/head.php' ?> 
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" alt="Logo">
-      VeciReport
-    </div>
-    <nav>
-      <div class="nav-links">
-        <a href="index.html" class="active">INICIO</a>
-        <a href="paginaInfo.html">INFORMACIÓN</a>
-        <a href="paginaAyuda.html">AYUDA</a>
-        <a href="participacionCiudadana.html">PARTICIPACIÓN CIUDADANA</a>
-        <a href="Perfil.html">PERFIL</a>
-      </div>
-    </nav>
-  </header>
+  <?php include 'app/fragmentos/header.php' ?>
 
 
   <main class="main">
@@ -36,7 +20,7 @@
         <h2>🗳️ Encuestas Activas</h2>
         <p>Participa en las encuestas más importantes de tu comunidad y ayuda a tomar decisiones que nos afectan a
           todos.</p>
-        <a href="verEncuestas.html" class="boton">Ver Encuestas</a>
+        <a href="verEncuestas.php" class="boton">Ver Encuestas</a>
       </div>
 
       <div class="card">

@@ -1,14 +1,55 @@
 -- Llenar la tabla de categorias
-INSERT INTO `categorias` (`id_categoria`, `nombre`) VALUES ('1', 'Infraestructura');
+INSERT INTO `categorias`(`nombre`) VALUES ('Infraestructura');
+INSERT INTO `categorias`(`nombre`) VALUES ('Electrica');
+INSERT INTO `categorias`(`nombre`) VALUES ('Entorno');
+INSERT INTO `categorias`(`nombre`) VALUES ('Natural');
 
 -- Llenar la tabla de provincias
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('1', 'San José');
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('2', 'Alajuela');
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('3', 'Cartago');
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('4', 'Heredia');
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('5', 'Guanacaste');
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('6', 'Puntarenas');
-INSERT INTO `provincias` (`id_provincia`, `nombre`) VALUES ('7', 'Limón');
+INSERT INTO `provincias` (`nombre`) VALUES ('San José');
+INSERT INTO `provincias` (`nombre`) VALUES ('Alajuela');
+INSERT INTO `provincias` (`nombre`) VALUES ('Cartago');
+INSERT INTO `provincias` (`nombre`) VALUES ('Heredia');
+INSERT INTO `provincias` (`nombre`) VALUES ('Guanacaste');
+INSERT INTO `provincias` (`nombre`) VALUES ('Puntarenas');
+INSERT INTO `provincias` ( `nombre`) VALUES ('Limón');
+
+--tabla de cantones
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'San José');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Escazú');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Desamparados');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Puriscal');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Tarrazú');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'Alajuela');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'San Ramón');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'Grecia');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'San Mateo');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'Atenas');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Cartago');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Paraíso');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'La Unión');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Jiménez');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Turrialba');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Heredia');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Barva');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Santo Domingo');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Santa Bárbara');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'San Rafael');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Liberia');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Nicoya');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Santa Cruz');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Bagaces');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Carrillo');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Puntarenas');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Esparza');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Buenos Aires');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Montes de Oro');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Osa');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Limón');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Pococí');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Siquirres');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Talamanca');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Matina');
+
 
 -- Llenar la tabla de usuarios
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido_1`, `apellido_2`, `correo`, `id_provincia`) VALUES ('1', 'Jefferson', 'Anchia', 'Garcia', 'jeffersanchia18@gmail.com', '6');

@@ -77,6 +77,8 @@ CREATE TABLE Reportes (
     prioridad VARCHAR(50),
     id_categoria INT,
     id_usuario INT,
+    id_canton INT,
+    FOREIGN KEY (id_canton) REFERENCES cantones(id_canton),
     FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria),
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 );

@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styleAyuda.css">
-    <title>VeciReport</title>
+    <?php include 'app/fragmentos/head.php' ?> 
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" alt="Logo">
-            VeciReport
-        </div>
-        <nav>
-            <div class="nav-links">
-                <a href="index.html">INICIO</a>
-                <a href="#" class="active">INFORMACIÓN</a>
-                <a href="paginaAyuda.html">AYUDA</a>
-                <a href="participacionCiudadana.html">PARTICIPACIÓN CIUDADANA</a>
-                <a href="Perfil.html">PERFIL</a>
-            </div>
-        </nav>
-    </header>
+    <?php include 'app/fragmentos/header.php' ?>
 
     <main class="principal">
         <div class="title">Información del Proyecto</div>

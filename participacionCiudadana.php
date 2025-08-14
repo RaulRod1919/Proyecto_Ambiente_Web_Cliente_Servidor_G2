@@ -2,30 +2,13 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleAyuda.css">
-    <script src="js/popUp.js"></script>
-    <title>VeciReport</title>
+    <?php include 'app/fragmentos/head.php' ?>
+    <script src="js/popUp.js"></script> 
+    <script src="js/participacion.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/groups.png" alt="Logo">
-            VeciReport
-        </div>
-        <nav>
-            <div class="nav-links">
-                <a href="index.html">INICIO</a>
-                <a href="paginaInfo.html">INFORMACIÓN</a>
-                <a href="paginaAyuda.html">AYUDA</a>
-                <a href="#" class="active">PARTICIPACIÓN CIUDADANA</a>
-                <a href="Perfil.html">PERFIL</a>
-            </div>
-        </nav>
-    </header>
-
+    <?php include 'app/fragmentos/header.php' ?>
     <main>
         <section class="main">
             <h1>Participación <br><span>Ciudadana</span></h1>
@@ -91,19 +74,20 @@
                 <p>Describe el problema que haz logrado identrificar dentro de tu comunidad, recuerda que tus aportes
                     ayudan al desarrollo de la comunidad.
                 </p>
-                <form class="form">
+                <form class="form" id="reporte">
                     <label>Titulo</label>
-                    <input type="text" class="entrada">
+                    <input type="text" class="entrada" id="titulo">
                     <label>Categorías</label>
-                    <select type="text" class="entrada">
-                        <option>Opción 1</option>
-                        <option>Opción 2</option>
-                        <option>Opción 3</option>
-                    </select>
+                    <select type="text" class="entrada" id="categorias"></select>
                     <label>Ubicación</label>
-                    <input type="text" class="entrada">
+                    <select type="text" class="entrada" id="provincias">
+                        <option hidden default>Provincias</option>
+                    </select>
+                    <select type="text" class="entrada" id="cantones">
+                        <option hidden default>Cantones</option>
+                    </select>
                     <label>Descripción</label>
-                    <textarea class="entrada" rows="3"></textarea>
+                    <textarea class="entrada" rows="3" id="descripcion"></textarea>
                     <label>Imagen del Problema</label>
                     <input type="file">
                     <div class="contenedor-btns">
