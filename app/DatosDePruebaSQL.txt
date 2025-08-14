@@ -13,7 +13,7 @@ INSERT INTO `provincias` (`nombre`) VALUES ('Guanacaste');
 INSERT INTO `provincias` (`nombre`) VALUES ('Puntarenas');
 INSERT INTO `provincias` ( `nombre`) VALUES ('Limón');
 
---tabla de cantones
+-- tabla de cantones
 INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'San José');
 INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Escazú');
 INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Desamparados');
