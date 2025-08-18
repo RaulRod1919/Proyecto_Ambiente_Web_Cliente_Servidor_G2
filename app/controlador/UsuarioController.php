@@ -13,6 +13,15 @@ class UsuarioController{
         }
     }
 
+    public function load($correo, $password){
+        $usuario = new Usuario();
+        if($usuario->load($correo, $password)){
+            return json_encode(["succes" => "El usuario inicio sesión correctamente"]);
+        }else{
+            return json_encode(["error" => "El usuario no pudo inicar sesión"]);
+        }
+    }
+
 }
 
 ?>

@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+    function limpiar(){
+        $("input").val("");
+    }
+
     function categorias(){
         $.get("router.php?action=getCategorias", function(respuesta){
         let categorias;
@@ -44,10 +48,16 @@ document.addEventListener("DOMContentLoaded", function(){
         let estado = $("#estado").val();
         let prioridad = $("#prioridad").val();
         let idCanton = $("#cantones").val();
-        $.post("router.php?action=saveReport", {idUsuario : 1, idCategoria : idCategoria, titulo : titulo,
+        $.post("router.php?action=saveReport", {idUsuario : idUsuario, idCategoria : idCategoria, titulo : titulo,
             descripcion : descripcion, estado : "N/D", prioridad : "N/D", idCanton : idCanton}, function(respuesta){
-                console.log(respuesta);
-        });
+                if(respuesta.succes){
+                    limpiar();
+                    alert(respuesta.succes);
+                }else{
+                    limpiar();
+                    alert(respuesta.error);
+                }
+        }, "json");
     });
 
     $("#user").on("submit", function(event){
@@ -58,10 +68,38 @@ document.addEventListener("DOMContentLoaded", function(){
         let correo = $("#correo").val();
         let password = $("#password").val();
         let idCanton = $("#cantones").val();
-        console.log(idCanton);
         $.post("router.php?action=saveUser", {nombre: nombre, apellido1: apellido1, apellido2: apellido2, correo: correo, password: password,
             rol : "User",idCanton: idCanton}, function(respuesta){
-                console.log(respuesta);
-        });
+                if(respuesta.succes){
+                    limpiar();
+                    alert(respuesta.succes + " ,favor inciar sesión");
+                }else{
+                    limpiar();
+                    alert(respuesta.error);
+                }
+        }, "json");
+    });
+
+    $("#inicioSesion").on("click", function(){
+        $("#popup2").css("display", "flex");
+    });
+
+    $("#cerrar2").on("click", function(){
+        $("#popup2").css("display", "none");
+    });
+
+    $("#login").on("submit", function(e){
+        e.preventDefault();
+        let correo = $("#correo2").val();
+        let password = $("#password2").val();
+        $.post("router.php?action=load",{correo : correo, password : password},function(respuesta){
+            if(respuesta.succes){
+                    limpiar();
+                    alert(respuesta.succes);
+                }else{
+                    limpiar();
+                    alert(respuesta.error);
+                }
+        }, "json");
     });
 });
