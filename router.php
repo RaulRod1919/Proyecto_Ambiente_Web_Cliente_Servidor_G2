@@ -32,6 +32,9 @@ switch($action){
         echo $userController->save($_POST['idCanton'], $_POST['nombre'], $_POST['apellido1'],
          $_POST['apellido2'], $_POST['correo'], $_POST['password'], $_POST['rol']);
     break;
+    case'load':
+        echo $userController->load( $_POST['correo'], $_POST['password']);
+    break;
 }
 
 ?>

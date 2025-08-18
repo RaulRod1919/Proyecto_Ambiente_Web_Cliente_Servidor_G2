@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +32,14 @@
                         <li>Servicios públicos</li>
                         <li>Seguridad</li>
                     </ul>
-                    <button class="boton-participacion bg-naranja" type="button" id="crearReporte">Crear Reporte</button>
+                    <?php
+                        if(isset($_SESSION["correo"])){
+                            echo "<button class='boton-participacion bg-naranja' type='button' id='crearReporte'>Crear Reporte</button>";
+                        }else{
+                            echo "<button class='boton-participacion bg-naranja' type='button' disabled id='crearReporte'>Debes iniciar sesión</button>";
+                        }
+                    ?>
+
                 </article>
                 <article class="contenedor-caja">
                     <div class="logo">
@@ -90,6 +99,7 @@
                     <textarea class="entrada" rows="3" id="descripcion"></textarea>
                     <label>Imagen del Problema</label>
                     <input type="file">
+                    <?php echo "<input type='hidden' value='".$_SESSION["idUsuario"]."' id='idUsuario'>" ?>
                     <div class="contenedor-btns">
                         <button class="boton-participacion bg-naranja" type="submit">Enviar Reporte</button>
                     </div>

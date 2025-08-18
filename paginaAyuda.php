@@ -19,7 +19,7 @@
                 <article class="card">
                     <h3>📞 Contacto</h3>
                     <p>¿Necesitas ayuda personalizada? Contáctanos a través de nuestro formulario.</p>
-                    <button class="btn btn-contacto">Contactar</button>
+                    <button class="btn btn-contacto" id="contacto">Contactar</button>
                 </article>
                 <article class="card">
                     <h3>🛡️ Políticas</h3>
