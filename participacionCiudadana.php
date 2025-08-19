@@ -108,11 +108,7 @@
         </div>
     </main>
 
-    <footer class="footer">
-        Universidad Fidélitas - Sede Virtual, Costa Rica<br />
-        Proyecto desarrollado como parte del curso de Desarrollo Web<br />
-        &copy; 2025 VeciReport
-    </footer>
+    <?php include 'app/fragmentos/footer.php' ?>
 </body>
 
 </html>

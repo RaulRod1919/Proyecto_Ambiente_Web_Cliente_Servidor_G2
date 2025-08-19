@@ -12,7 +12,7 @@
         <h1>Reportes Activos</h1>
          <?php
         include('./app/config/db.php');
-        $sql = "SELECT id_reporte, titulo, descripcion, estado, prioridad FROM Reportes";
+        $sql = "SELECT * FROM `reportes`";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -34,11 +34,7 @@
         ?>
     </main>
 
-    <footer class="footer">
-        Universidad Fidélitas - Sede Virtual, Costa Rica<br />
-        Proyecto desarrollado como parte del curso de Desarrollo Web<br />
-        &copy; 2025 VeciReport
-    </footer>
+    <?php include 'app/fragmentos/footer.php' ?>
 </body>
 
 </html>

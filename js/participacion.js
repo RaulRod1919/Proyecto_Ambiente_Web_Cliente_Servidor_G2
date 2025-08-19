@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(){
             rol : "User",idCanton: idCanton}, function(respuesta){
                 if(respuesta.succes){
                     limpiar();
-                    alert(respuesta.succes + " ,favor inciar sesión");
+                    alert(respuesta.succes + ", ya puede iniciar sesión");
                 }else{
                     limpiar();
                     alert(respuesta.error);
@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function(){
             if(respuesta.succes){
                     limpiar();
                     alert(respuesta.succes);
+                    location.reload();
                 }else{
                     limpiar();
                     alert(respuesta.error);

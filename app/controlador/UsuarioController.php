@@ -18,7 +18,7 @@ class UsuarioController{
         if($usuario->load($correo, $password)){
             return json_encode(["succes" => "El usuario inicio sesión correctamente"]);
         }else{
-            return json_encode(["error" => "El usuario no pudo inicar sesión"]);
+            return json_encode(["error" => "El usuario no pudo iniciar sesión"]);
         }
     }
 

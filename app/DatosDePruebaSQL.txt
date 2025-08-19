@@ -51,8 +51,5 @@ INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Talamanca');
 INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Matina');
 
 
--- Llenar la tabla de usuarios
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido_1`, `apellido_2`, `correo`, `id_provincia`) VALUES ('1', 'Jefferson', 'Anchia', 'Garcia', 'jeffersanchia18@gmail.com', '6');
-
--- Llenar la tabla de reportes
-INSERT INTO `reportes` (`id_reporte`, `titulo`, `descripcion`, `estado`, `prioridad`, `id_categoria`, `id_usuario`) VALUES ('1', 'Acera dañada', 'Acera dañada cerca del salón comunal', 'Pendiente', 'media', '1', '1');
+-- Crear al usuario Admin
+INSERT INTO `usuarios` (`id_usuario`, `id_canton`, `nombre`, `apellido_1`, `apellido_2`, `correo`, `password`, `rol`) VALUES ('1', '26', 'Jefferson', 'Anchia', 'Garcia', 'jeffersanchia18@gmail.com', '12345', 'Admin');
