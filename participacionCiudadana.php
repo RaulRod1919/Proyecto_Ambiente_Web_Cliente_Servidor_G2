@@ -55,7 +55,13 @@
                         <li>Servicios públicos</li>
                         <li>Seguridad</li>
                     </ul>
-                    <button class="boton-participacion bg-celeste" type="button">Ver Reportes</button>
+                    <?php
+                        if(isset($_SESSION["rol"]) && $_SESSION["rol"] == "Admin"){
+                            echo "<a href='reportesAdmin.php'><button class='boton-participacion bg-celeste' type='button'>Gestionar Reportes</button></a>";
+                        }else{
+                            echo "<a><button class='boton-participacion bg-celeste' type='button'>Debes ser Administrador</button></a>";
+                        }
+                    ?>
                 </article>
             </section>
 
@@ -80,9 +86,6 @@
             <div class="popup">
                 <button class="cerrar-btn" id="cerrar">&times;</button>
                 <h2>Crear un Nuevo Reporte</h2>
-                <p>Describe el problema que haz logrado identrificar dentro de tu comunidad, recuerda que tus aportes
-                    ayudan al desarrollo de la comunidad.
-                </p>
                 <form class="form" id="reporte">
                     <label>Titulo</label>
                     <input type="text" class="entrada" id="titulo">

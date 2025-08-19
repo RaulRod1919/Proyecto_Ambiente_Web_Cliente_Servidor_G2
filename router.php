@@ -35,6 +35,18 @@ switch($action){
     case'load':
         echo $userController->load( $_POST['correo'], $_POST['password']);
     break;
+    case'getReportes':
+        echo $reportController->getReportes();
+    break;
+    case'deleteReporte':
+        echo $reportController->deleteReporte($_POST["idReporte"]);
+    break;
+    case'getReporte':
+        echo $reportController->getReporte($_POST["idReporte"]);
+    break;
+    case'updateReporte':
+        echo $reportController->updateReporte($_POST["prioridad"],$_POST["estado"],$_POST["idReporte"]);
+    break;
 }
 
 ?>

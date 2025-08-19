@@ -18,6 +18,37 @@ class Reporte{
         return $stmt->execute();
     }
 
+    public function getReportes(){
+        $sql = "SELECT * FROM `reportes` WHERE prioridad = 'N/D' or estado = 'N/D'";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all();
+    }
+
+    public function deleteReporte($idReporte){
+        $sql = "DELETE FROM `reportes` WHERE id_reporte = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $idReporte);
+        return $stmt->execute();
+    }
+
+    public function getReporte($idReporte){
+        $sql = "SELECT * FROM `reportes` WHERE id_reporte = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $idReporte);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
+    public function updateReporte($prioridad, $estado, $idReporte){
+        $sql = "UPDATE `reportes` set prioridad = ?, estado = ? WHERE id_reporte = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ssi", $prioridad, $estado, $idReporte);
+        return $stmt->execute();
+    }
+
 }
 
 ?>
