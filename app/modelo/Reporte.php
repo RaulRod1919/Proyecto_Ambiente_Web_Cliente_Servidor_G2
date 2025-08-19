@@ -19,7 +19,7 @@ class Reporte{
     }
 
     public function getReportes(){
-        $sql = "SELECT * FROM `reportes` WHERE prioridad = 'N/D' or estado = 'N/D'";
+        $sql = "SELECT * FROM `reportes`";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
