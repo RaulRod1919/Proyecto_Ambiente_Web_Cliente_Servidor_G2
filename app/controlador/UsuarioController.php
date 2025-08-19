@@ -22,6 +22,15 @@ class UsuarioController{
         }
     }
 
+    public function setRol($correo, $password, $rol){
+        $usuario = new Usuario();
+        if($usuario->setRol($correo, $password, $rol)){
+            return json_encode(["succes" => "El usuario fue actualizado"]);
+        }else{
+            return json_encode(["error" => "No se encontro el usuario"]);
+        }
+    }
+
 }
 
 ?>

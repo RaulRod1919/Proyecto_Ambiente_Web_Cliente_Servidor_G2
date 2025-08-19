@@ -82,6 +82,22 @@ class Usuario{
         }
     }
 
+    public function setRol($correo, $password, $rol){
+        if($this->exist($correo)){
+            $user = $this->getUser($correo);
+            if(password_verify($password, $user["password"])){
+                $sql = "UPDATE `usuarios` SET rol = ? WHERE correo = ?";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bind_param("ss",$rol, $correo);
+                return $stmt->execute();
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
 }
 
 ?>

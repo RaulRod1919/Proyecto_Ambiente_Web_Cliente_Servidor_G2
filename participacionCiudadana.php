@@ -5,7 +5,7 @@
 
 <head>
     <?php include 'app/fragmentos/head.php' ?>
-    <script src="js/popUp.js"></script> 
+    <script src="js/popUp.js"></script>
     <script src="js/participacion.js"></script>
 </head>
 
@@ -22,7 +22,7 @@
                         <div class="contenedor-icon-danger bg-naranja">
                             <img src="img/advertencia.png" alt="Advertencia">
                         </div>
-                        Reportar un Problema
+                        Gestion de Reportes
                     </div>
                     <p>¿Haz identificado algun problema en tu comunidad? Reportalo aquí y las autoridades
                         correspondientes
@@ -38,30 +38,7 @@
                         }else{
                             echo "<button class='boton-participacion bg-naranja' type='button' disabled id='crearReporte'>Debes iniciar sesión</button>";
                         }
-                    ?>
-
-                </article>
-                <article class="contenedor-caja">
-                    <div class="logo">
-                        <div class="contenedor-icon-danger bg-celeste">
-                            <img src="img/busqueda.png" alt="Busqueda">
-                        </div>
-                        Consultar Reportes
-                    </div>
-                    <p>Consulta el estado de tus reportes y revisa otros reportes realizados por la comunidad
-                        para estar al día.</p>
-                    <ul>
-                        <li>Infraestructura</li>
-                        <li>Servicios públicos</li>
-                        <li>Seguridad</li>
-                    </ul>
-                    <?php
-                        if(isset($_SESSION["rol"]) && $_SESSION["rol"] == "Admin"){
-                            echo "<a href='reportesAdmin.php'><button class='boton-participacion bg-celeste' type='button'>Gestionar Reportes</button></a>";
-                        }else{
-                            echo "<a><button class='boton-participacion bg-celeste' type='button'>Debes ser Administrador</button></a>";
-                        }
-                    ?>
+                ?>
                 </article>
             </section>
 

@@ -18,6 +18,11 @@ if (session_status() === PHP_SESSION_NONE) {
       <a href="paginaAyuda.php">AYUDA</a>
       <a href="participacionCiudadana.php" id="participacion">PARTICIPACIÓN CIUDADANA</a>
       <a href="Perfil.php">PERFIL</a>
+      <?php
+        if(isset($_SESSION["rol"]) && $_SESSION["rol"] == "Admin"){
+            echo "<a href='admin.php'>Admin</a>";
+          }
+      ?>
     </div>
     <?php if (!empty($_SESSION['nombre'])): ?>
       <div class="usuario-loggeado">

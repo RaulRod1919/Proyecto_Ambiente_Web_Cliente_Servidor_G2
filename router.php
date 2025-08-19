@@ -47,6 +47,9 @@ switch($action){
     case'updateReporte':
         echo $reportController->updateReporte($_POST["prioridad"],$_POST["estado"],$_POST["idReporte"]);
     break;
+    case'setRol':
+        echo $userController->setRol( $_POST['correo'], $_POST['password'], $_POST['rol']);
+    break;
 }
 
 ?>
