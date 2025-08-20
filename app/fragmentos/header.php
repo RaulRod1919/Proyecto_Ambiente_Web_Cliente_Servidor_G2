@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <a href="Perfil.php">PERFIL</a>
       <?php
         if(isset($_SESSION["rol"]) && $_SESSION["rol"] == "Admin"){
-            echo "<a href='admin.php'>Admin</a>";
+            echo "<a href='admin.php'>ADMIN</a>";
           }
       ?>
     </div>
