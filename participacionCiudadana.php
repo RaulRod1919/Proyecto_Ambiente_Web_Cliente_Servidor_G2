@@ -65,20 +65,20 @@
                 <h2>Crear un Nuevo Reporte</h2>
                 <form class="form" id="reporte">
                     <label>Titulo</label>
-                    <input type="text" class="entrada" id="titulo">
+                    <input type="text" class="entrada" id="titulo" required>
                     <label>Categorías</label>
-                    <select type="text" class="entrada" id="categorias"></select>
+                    <select type="text" class="entrada" id="categorias" required></select>
                     <label>Ubicación</label>
-                    <select type="text" class="entrada" id="provincias">
-                        <option hidden default>Provincias</option>
+                    <select type="text" class="entrada" id="provincias" required>
+                        <option hidden default value="">Provincias</option>
                     </select>
-                    <select type="text" class="entrada" id="cantones">
-                        <option hidden default>Cantones</option>
+                    <select type="text" class="entrada" id="cantones" required>
+                        <option hidden default value="">Cantones</option>
                     </select>
                     <label>Descripción</label>
-                    <textarea rows="3" id="descripcion"></textarea>
+                    <textarea rows="3" id="descripcion" required></textarea>
                     <label>Imagen del Problema</label>
-                    <input type="file">
+                    <input type="file" id="imagen" required>
                     <?php echo "<input type='hidden' value='".$_SESSION["idUsuario"]."' id='idUsuario'>" ?>
                     <div class="contenedor-btns">
                         <button class="boton-participacion bg-naranja" type="submit">Enviar Reporte</button>

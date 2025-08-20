@@ -26,8 +26,14 @@ switch($action){
         echo $cantonesController->getCantonesProvincia($_GET["provincia"]);
     break;
     case'saveReport':
-        echo $reportController->save($_POST["idUsuario"], $_POST["idCategoria"], $_POST["titulo"], $_POST["descripcion"], 
-        $_POST["estado"], $_POST["prioridad"], $_POST["idCanton"]);
+        $carpetaDestino = "img/subidas/"; //La carptea que creamos para subir las imagenes
+        $nombreArchivo = time() . "_" . basename($_FILES["imagen"]["name"]/*esto trae el nombre del archivo original en el
+        arreglo asociativo por aquello*/);
+        $rutaImagen = $carpetaDestino . $nombreArchivo; //Esta es la ruta donde estara el arch para guardarlo en la base
+        move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagen); //Aca movemos el archivo desde la parte temporal a 
+        //la carpeta que pusimos nosotros y ya estaría en la carpeta lista para verse
+        echo $reportController->save($_POST["idUsuario"], $_POST["idCategoria"], $_POST["titulo"],
+            $_POST["descripcion"], $_POST["estado"], $_POST["prioridad"], $_POST["idCanton"], $rutaImagen);
     break;
     case'saveUser':
         echo $userController->save($_POST['idCanton'], $_POST['nombre'], $_POST['apellido1'],
@@ -74,6 +80,9 @@ switch($action){
     break;
     case'getEncuestasNoVotadas':
         echo $encuestaController->getEncuestas2($_POST['idUsuario']);
+    break;
+    case'getReportesActivos':
+        echo $reportController->getReportesActivos();
     break;
 }
 

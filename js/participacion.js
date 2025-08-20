@@ -41,23 +41,43 @@ document.addEventListener("DOMContentLoaded", function(){
 
     $("#reporte").on("submit", function(event){
         event.preventDefault();
-        let idUsuario = $("#idUsuario").val();
-        let idCategoria = $("#categorias").val();
-        let titulo = $("#titulo").val();
-        let descripcion = $("#descripcion").val();
-        let estado = $("#estado").val();
-        let prioridad = $("#prioridad").val();
-        let idCanton = $("#cantones").val();
-        $.post("router.php?action=saveReport", {idUsuario : idUsuario, idCategoria : idCategoria, titulo : titulo,
-            descripcion : descripcion, estado : "N/D", prioridad : "N/D", idCanton : idCanton}, function(respuesta){
-                if(respuesta.succes){
+        let formData = new FormData();
+
+        formData.append("idUsuario", $("#idUsuario").val());
+        formData.append("idCategoria", $("#categorias").val());
+        formData.append("titulo", $("#titulo").val());
+        formData.append("descripcion", $("#descripcion").val());
+        formData.append("estado", "N/D");
+        formData.append("prioridad", "N/D");
+        formData.append("idCanton", $("#cantones").val());
+
+        let imagen = $("#imagen")[0].files[0];
+        if (imagen) {
+            formData.append("imagen", imagen);
+        }
+        //El form data es como los arreglos asociativos que mandamos con
+        //  el $.pos() que lo haciamos como {x : x}, pero este nos permite manejar img con ajax, todo esto para que se entienda mejor
+
+        $.ajax({
+            url: "router.php?action=saveReport",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,  // no pasa los datos a string para manejar la imagen bien y que no se joda
+            dataType: "json",
+            success: function(respuesta) {
+                if (respuesta.succes) {
                     limpiar();
                     alert(respuesta.succes);
-                }else{
+                } else {
                     limpiar();
                     alert(respuesta.error);
                 }
-        }, "json");
+            },
+            error: function(err) {
+                console.log("Error en AJAX:", err);
+            }
+        });
     });
 
     $("#user").on("submit", function(event){

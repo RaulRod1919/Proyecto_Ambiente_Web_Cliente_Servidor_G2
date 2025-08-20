@@ -51,7 +51,7 @@
                         <option value="Finalizada">Finalizada</option>
                     </select>
                     <label>Imagen del Problema</label>
-                    <input type="file">
+                    <img id="imagenReporte">
                     <div class="contenedor-btns">
                         <button class="boton-participacion bg-naranja" type="submit">Enviar Reporte</button>
                     </div>

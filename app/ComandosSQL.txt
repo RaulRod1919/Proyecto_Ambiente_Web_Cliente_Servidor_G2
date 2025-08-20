@@ -26,7 +26,6 @@ create table categorias(
     nombre varchar(30) not null
 );
 
-
 create table reportes(
     id_reporte int not null PRIMARY KEY AUTO_INCREMENT,
     id_usuario int not null,
@@ -41,6 +40,7 @@ create table reportes(
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY(id_categoria) REFERENCES categorias(id_categoria)
 );
+
 create table encuestas(
     id_encuesta int not null PRIMARY KEY AUTO_INCREMENT,
     titulo varchar(40) not null,
@@ -59,7 +59,26 @@ FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
 FOREIGN KEY(id_encuesta) REFERENCES encuestas(id_encuesta)
 )
 
-Inserts necesarios
+CREATE VIEW vista_reportes_activos AS
+SELECT 
+    r.id_reporte,
+    r.titulo,
+    r.descripcion,
+    r.estado,
+    r.ruta_imagen,
+    c.nombre AS nombre_canton,
+    p.nombre AS nombre_provincia
+FROM 
+    reportes r
+INNER JOIN 
+    cantones c ON r.id_canton = c.id_canton
+INNER JOIN 
+    provincias p ON c.id_provincia = p.id_provincia
+WHERE 
+    r.estado = 'Aprobada';
+
+
+--Inserts necesarios
 -- Llenar la tabla de categorias
 INSERT INTO `categorias`(`nombre`) VALUES ('Infraestructura');
 INSERT INTO `categorias`(`nombre`) VALUES ('Electrica');

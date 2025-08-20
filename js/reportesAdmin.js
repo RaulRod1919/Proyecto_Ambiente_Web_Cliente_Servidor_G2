@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
             $("#idReporte").val(respuesta.reporte.id_reporte);
             $("#titulo").val(respuesta.reporte.titulo);
             $("#descripcion").val(respuesta.reporte.descripcion);
+            $("#imagenReporte").attr("src",respuesta.reporte.ruta_imagen);
         }, "json");
     });
 

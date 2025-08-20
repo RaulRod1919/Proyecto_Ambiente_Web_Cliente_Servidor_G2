@@ -4,9 +4,9 @@ include_once("app/modelo/Reporte.php");
 
 class ReporteController{
 
-    public function save($idUsuario, $idCategoria, $titulo, $descripcion, $estado, $prioridad, $idCanton){
+    public function save($idUsuario, $idCategoria, $titulo, $descripcion, $estado, $prioridad, $idCanton, $rutaImagen){
         $reporte = new Reporte();
-        if($reporte->save($idUsuario, $idCategoria, $titulo, $descripcion, $estado, $prioridad, $idCanton)){
+        if($reporte->save($idUsuario, $idCategoria, $titulo, $descripcion, $estado, $prioridad, $idCanton, $rutaImagen)){
             return json_encode(["succes" => "El reporte a sido guardado con exito"]);
         }else{
             return json_encode(["error" => "El reporte no a sido guardado con exito"]);
@@ -39,6 +39,11 @@ class ReporteController{
         }else{
             return json_encode(["succes" => "El reporte no se pudo actualizar"]);
         }
+    }
+
+    public function getReportesActivos(){
+        $reporte = new Reporte();
+        return json_encode(["reportes" => $reporte->getReportesActivos()]);
     }
 
 }

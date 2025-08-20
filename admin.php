@@ -57,11 +57,11 @@
                 <h2>Crear un Nuevo Reporte</h2>
                 <form class="form" id="setRol">
                     <label>Correo</label>
-                    <input type="email" class="entrada" id="correo">
+                    <input type="email" class="entrada" id="correo" required>
                     <label>Contraseña</label>
-                    <input type="password" class="entrada" id="password">
+                    <input type="password" class="entrada" id="password" required>
                     <label>Roles</label>
-                    <select type="text" class="entrada" id="rol">
+                    <select type="text" class="entrada" id="rol" required>
                         <option default value="Admin">Administrador</option>
                         <option value="User">Usuario</option>
                     </select>

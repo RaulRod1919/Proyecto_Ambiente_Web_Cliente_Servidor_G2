@@ -3,35 +3,19 @@
 
 <head>
     <?php include 'app/fragmentos/head.php' ?> 
+    <script src="js/reportesActivos.js"></script>
 </head>
 
 <body>
     <?php include 'app/fragmentos/header.php' ?>
 
     <main class="main">
-        <h1>Reportes Activos</h1>
-         <?php
-        include('./app/config/db.php');
-        $sql = "SELECT * FROM `reportes`";
-        $result = $conn->query($sql);
+        <h1>Reportes <span>Activos</span></h1>
+        <p>En esta sección podrás visualizar aquellos reportes realizados por los usuarios y que 
+        fueron aprovados por nuestos administradores</p>
+        <section class="tarjetas">
 
-        if ($result->num_rows > 0) {
-            echo "<table border='1' cellpadding='10' style='margin: 0 auto;'>";
-            echo "<tr><th>Título</th><th>Descripción</th><th>Estado</th><th>Prioridad</th></tr>";
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($row["titulo"]) . "</td>";
-                echo "<td>" . htmlspecialchars($row["descripcion"]) . "</td>";
-                echo "<td>" . htmlspecialchars($row["estado"]) . "</td>";
-                echo "<td>" . htmlspecialchars($row["prioridad"]) . "</td>";
-                echo "</tr>";
-            }
-            echo "</table>";
-        } else {
-            echo "<p>No hay reportes activos.</p>";
-        }
-        $conn->close();
-        ?>
+        </section>
     </main>
 
     <?php include 'app/fragmentos/footer.php' ?>
