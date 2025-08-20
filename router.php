@@ -66,6 +66,15 @@ switch($action){
     case'deleteEncuesta':
         echo $encuestaController->deleteEncuesta($_POST['idEncuesta']);
     break;
+    case'like':
+        echo $encuestaController->like($_POST['idEncuesta'], $_POST['idUsuario']);
+    break;
+    case'dislike':
+        echo $encuestaController->dislike($_POST['idEncuesta'], $_POST['idUsuario']);
+    break;
+    case'getEncuestasNoVotadas':
+        echo $encuestaController->getEncuestas2($_POST['idUsuario']);
+    break;
 }
 
 ?>

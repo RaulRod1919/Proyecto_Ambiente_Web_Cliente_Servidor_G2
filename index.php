@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,7 +22,11 @@
         <h2>🗳️ Encuestas Activas</h2>
         <p>Participa en las encuestas más importantes de tu comunidad y ayuda a tomar decisiones que nos afectan a
           todos.</p>
-        <a href="verEncuestas.php" class="boton">Ver Encuestas</a>
+          <?php if(isset($_SESSION["correo"])){
+            echo "<a href='verEncuestas.php' class='boton'>Ver Encuestas</a>";
+          }else{
+            echo "<a class='boton'>Debes inicar sesión</a>";
+          }?>
       </div>
 
       <div class="card">

@@ -1,9 +1,3 @@
--- Ejecutar en PhpMyAdmin general
-CREATE DATABASE IF NOT EXISTS VeciReport;
-USE VeciReport
-
--- Ejecutar en la base de datos de VeciReport
-
 create table provincias(
     id_provincia int not null PRIMARY KEY AUTO_INCREMENT,
 	nombre varchar(50) not null    
@@ -27,26 +21,11 @@ create table usuarios(
     rol varchar(50) not null,
     FOREIGN KEY(id_canton) REFERENCES cantones(id_canton)
 );
-
-create table telefonos(
-    id_telefono int not null PRIMARY KEY AUTO_INCREMENT,
-    telefono int not null
-);
-
-
-
-create table usuarios_telefonos(
-    id_usuario_telefono int not null PRIMARY KEY AUTO_INCREMENT,
-    id_usuario int not null,
-    id_telefono int not null,
-    FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY(id_telefono) REFERENCES telefonos(id_telefono)
-);
-
 create table categorias(
     id_categoria int not null PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(30) not null
 );
+
 
 create table reportes(
     id_reporte int not null PRIMARY KEY AUTO_INCREMENT,
@@ -56,21 +35,12 @@ create table reportes(
     descripcion varchar(200) not null,
     estado varchar(30) not null,
     prioridad varchar (30) not null,
-    id_canton INT,
+    id_canton INT not null,
+    ruta_imagen varchar(100),
     FOREIGN KEY (id_canton) REFERENCES cantones(id_canton),
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY(id_categoria) REFERENCES categorias(id_categoria)
 );
-
-
-
-create table imagenes(
-    id_imagen int not null PRIMARY KEY AUTO_INCREMENT,
-    id_reporte int not null,
-    direccion varchar(200) not null,
-    FOREIGN KEY(id_reporte) REFERENCES reportes(id_reporte)
-);
-
 create table encuestas(
     id_encuesta int not null PRIMARY KEY AUTO_INCREMENT,
     titulo varchar(40) not null,
@@ -80,3 +50,64 @@ create table encuestas(
     id_usuario int not null,
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario)
 );
+
+create table encuestas_usuarios(
+Id_encuesta_usuario int not null primary key auto_increment,
+Id_usuario int not null,
+Id_encuesta int not null,
+FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
+FOREIGN KEY(id_encuesta) REFERENCES encuestas(id_encuesta)
+)
+
+Inserts necesarios
+-- Llenar la tabla de categorias
+INSERT INTO `categorias`(`nombre`) VALUES ('Infraestructura');
+INSERT INTO `categorias`(`nombre`) VALUES ('Electrica');
+INSERT INTO `categorias`(`nombre`) VALUES ('Entorno');
+INSERT INTO `categorias`(`nombre`) VALUES ('Natural');
+
+-- Llenar la tabla de provincias
+INSERT INTO `provincias` (`nombre`) VALUES ('San José');
+INSERT INTO `provincias` (`nombre`) VALUES ('Alajuela');
+INSERT INTO `provincias` (`nombre`) VALUES ('Cartago');
+INSERT INTO `provincias` (`nombre`) VALUES ('Heredia');
+INSERT INTO `provincias` (`nombre`) VALUES ('Guanacaste');
+INSERT INTO `provincias` (`nombre`) VALUES ('Puntarenas');
+INSERT INTO `provincias` ( `nombre`) VALUES ('Limón');
+
+-- tabla de cantones
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'San José');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Escazú');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Desamparados');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Puriscal');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (1, 'Tarrazú');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'Alajuela');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'San Ramón');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'Grecia');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'San Mateo');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (2, 'Atenas');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Cartago');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Paraíso');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'La Unión');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Jiménez');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (3, 'Turrialba');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Heredia');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Barva');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Santo Domingo');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'Santa Bárbara');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (4, 'San Rafael');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Liberia');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Nicoya');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Santa Cruz');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Bagaces');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (5, 'Carrillo');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Puntarenas');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Esparza');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Buenos Aires');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Montes de Oro');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (6, 'Osa');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Limón');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Pococí');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Siquirres');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Talamanca');
+INSERT INTO `cantones`(`id_provincia`, `nombre`) VALUES (7, 'Matina');

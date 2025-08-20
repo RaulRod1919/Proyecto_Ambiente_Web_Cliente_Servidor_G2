@@ -41,6 +41,29 @@ class EncuestaController{
         }
     }
 
+    public function like($idEncuesta, $idUsuario){
+        $encuesta = new Encuesta();
+        if($encuesta->like($idEncuesta, $idUsuario)){
+            return json_encode(["succes" => "Su voto fue recibido con exito, muchas gracias"]);
+        }else{
+            return json_encode(["error" => "Su voto no fue recibido, ocurrio algun error"]);
+        }
+    }
+
+    public function dislike($idEncuesta, $idUsuario){
+        $encuesta = new Encuesta();
+        if($encuesta->dislike($idEncuesta, $idUsuario)){
+            return json_encode(["succes" => "Su voto fue recibido con exito, muchas gracias"]);
+        }else{
+            return json_encode(["error" => "Su voto no fue recibido, ocurrio algun error"]);
+        }
+    }
+
+    public function getEncuestas2($idUsuario){
+        $encuesta = new Encuesta();
+        return json_encode(["encuestas" => $encuesta->getEncuestas2($idUsuario)]);
+    }
+
 }
 
 ?>
