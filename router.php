@@ -5,6 +5,7 @@ require_once("app/controlador/ProvinciaController.php");
 require_once("app/controlador/CantonController.php");
 require_once("app/controlador/ReporteController.php");
 require_once("app/controlador/UsuarioController.php");
+require_once("app/controlador/EncuestaController.php");
 
 $action = $_GET["action"];
 $catController = new CategoriaController();
@@ -12,7 +13,7 @@ $provController = new ProvinciaController();
 $cantonesController = new CantonController();
 $reportController = new ReporteController();
 $userController = new UsuarioController();
-
+$encuestaController = new EncuestaController();
 
 switch($action){
     case'getCategorias':
@@ -49,6 +50,21 @@ switch($action){
     break;
     case'setRol':
         echo $userController->setRol( $_POST['correo'], $_POST['password'], $_POST['rol']);
+    break;
+    case'addEncuesta':
+        echo $encuestaController->addEncuesta( $_POST['titulo'], $_POST['descripcion'], $_POST['likes'], $_POST['dislikes'], $_POST['idUsuario'] );
+    break;
+    case'getEncuestas':
+        echo $encuestaController->getEncuestas();
+    break;
+    case'getEncuesta':
+        echo $encuestaController->getEncuesta($_POST['idEncuesta']);
+    break;
+    case'actualizarEncuesta':
+        echo $encuestaController->updateEncuesta($_POST['titulo'], $_POST['descripcion'],$_POST['idEncuesta']);
+    break;
+    case'deleteEncuesta':
+        echo $encuestaController->deleteEncuesta($_POST['idEncuesta']);
     break;
 }
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +40,7 @@
             <section class="card">
                 <h2>Gestion de Encuestas</h2>
                 <p>Apartado donde podras crear, editar y eliminar encuestas que podrán realizar los usuarios</p>
-                <button class="boton">Encuestas</button>
+                <a href="encuestas.php"><button class="boton">Encuestas</button></a>
             </section>
 
             <section class="card">
@@ -69,12 +71,7 @@
                 </form>
             </div>
         </div>
-
-        <footer class="footer">
-            Universidad Fidélitas - Sede Virtual, Costa Rica<br />
-            Proyecto desarrollado como parte del curso de Desarrollo Web<br />
-            &copy; 2025 VeciReport
-        </footer>
+        <?php include 'app/fragmentos/footer.php' ?>
     </main>
 
 </body>

@@ -491,6 +491,11 @@
      gap: 6px;
  }
 
+ button img{
+    width: 30px;
+    aspect-ratio: 1 / 1;
+ }
+
  .like.active {
      background: #4caf50;
      color: #fff;
@@ -589,3 +594,12 @@
      border-radius: 6px;
      border: 1px solid #ccc;
  }
+
+textarea {
+   padding: 4%;
+   background-color: rgba(255, 255, 255, 0.2);
+   color:white;
+   resize: vertical;
+   white-space: pre-wrap;
+   word-wrap: break-word; 
+}

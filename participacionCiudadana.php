@@ -76,7 +76,7 @@
                         <option hidden default>Cantones</option>
                     </select>
                     <label>Descripción</label>
-                    <textarea class="entrada" rows="3" id="descripcion"></textarea>
+                    <textarea rows="3" id="descripcion"></textarea>
                     <label>Imagen del Problema</label>
                     <input type="file">
                     <?php echo "<input type='hidden' value='".$_SESSION["idUsuario"]."' id='idUsuario'>" ?>
