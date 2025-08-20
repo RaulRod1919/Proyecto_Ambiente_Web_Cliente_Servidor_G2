@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(){
             for(let i = 0; i < respuesta.encuestas.length; i++){
                 encuesta = respuesta.encuestas[i];
                 $("#tbody").append("<tr class='fila' data-id='"+encuesta[0]+"'>"+
-                    "<td>"+encuesta[0]+"</td>"+
+                    "<td class='columna'>"+encuesta[0]+"</td>"+
                         "<td>"+encuesta[1]+"</td>"+
                         "<td>"+encuesta[2]+"</td>"+
                         "<td>"+encuesta[3]+"</td>"+

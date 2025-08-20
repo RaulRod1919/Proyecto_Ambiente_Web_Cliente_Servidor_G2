@@ -52,9 +52,11 @@ main{
 
  .btn{
     all: none;
-    border-radius: 10px;
+    font-size: 18px;
+    border-radius: 5px;
     border: none;
     padding: 10%;
+    margin-right: 10px;
     color: white;
  }
 
@@ -91,7 +93,8 @@ main{
 .table td {
   text-align: center;
   vertical-align: middle; 
-  padding: 1%; 
+  padding: 1%;
+  max-width: 250px;
 }
 
 .fila:hover{

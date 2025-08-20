@@ -50,7 +50,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <h2>Contacto Soporte</h2>
             <form id="form-contacto">
                 <label for="motivo">Motivo del contacto:</label>
-                <input type="text" id="motivo" name="motivo" required>
+                <input class="entrada" type="text" id="motivo" name="motivo" required>
                 <label for="descripcion">Descripción del problema:</label>
                 <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
                 <button type="submit" class="boton">Enviar</button>

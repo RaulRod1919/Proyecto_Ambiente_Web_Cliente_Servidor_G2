@@ -26,7 +26,7 @@ switch($action){
         echo $cantonesController->getCantonesProvincia($_GET["provincia"]);
     break;
     case'saveReport':
-        $carpetaDestino = "img/subidas/"; //La carptea que creamos para subir las imagenes
+        $carpetaDestino = "img/subidas/"; //La carpeta que creamos para subir las imagenes
         $nombreArchivo = time() . "_" . basename($_FILES["imagen"]["name"]/*esto trae el nombre del archivo original en el
         arreglo asociativo por aquello*/);
         $rutaImagen = $carpetaDestino . $nombreArchivo; //Esta es la ruta donde estara el arch para guardarlo en la base
