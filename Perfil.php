@@ -30,11 +30,15 @@
           <button class="boton" id="crearReporte">Crear Cuenta</button>
         </section>
       <?php endif; ?>
-      <section class="card">
-        <h2>Log-Out</h2>
-        <p>En esta sección podras cerrar sesión en tu cuenta presionando el boton de abajo.</p>
-        <a class="boton" id="logout" href="logout.php">Log-Out</a>
-      </section>
+      <?php 
+        if(isset($_SESSION["correo"])){
+          echo "<section class='card'>
+          <h2>Log-Out</h2>
+          <p>En esta sección podras cerrar sesión en tu cuenta presionando el boton de abajo.</p>
+          <a class='boton' id='logout' href='logout.php'>Log-Out</a>
+        </section>";
+        }
+      ?>
     </section>
     </section>
     <footer class="footer">
